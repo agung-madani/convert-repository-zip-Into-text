@@ -7,8 +7,20 @@ This application allows users to upload a ZIP file of a repository and displays 
 To get a local copy up and running, follow these steps:
 
 1. Clone the repository.
+   ```bash
+   git clone https://github.com/agung-madani/convert-repository-zip-Into-text.git
+   cd convert-repository-zip-Into-text
+   ```
 2. Install the required dependencies.
-3. Run the application.
+   ```bash
+   pip install flask
+   ```
+4. Run the application.
+   ```bash
+   python app.py
+   ```
+5. There will appear the address & open on your local web page
+   * Running on ...
 
 ## Usage
 
