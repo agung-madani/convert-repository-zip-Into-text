@@ -18,8 +18,7 @@ To get a local copy up and running, follow these steps:
 
 ![image](https://github.com/agung-madani/convert-repository-zip-Into-text/assets/121701309/f1ccb0a3-fd24-4563-80bf-e08d30dbe9bb)
 
-![image](https://github.com/agung-madani/convert-repository-zip-Into-text/assets/121701309/57ff5304-8cef-4ac5-a1a2-0645e37c773d)
-
+![image](https://github.com/agung-madani/convert-repository-zip-Into-text/assets/121701309/1e3024ef-76bc-4783-a1c7-5a2b4b09d3bb)
 
 ## Code Overview
 
