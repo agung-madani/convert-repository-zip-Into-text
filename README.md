@@ -1,7 +1,7 @@
 
 # Convert Repository into Readable Text Format
 
-This application enables users to convert the content of a repository stored in a ZIP file into readable text format, so you can use in your **ChatGPT** as a free programmer
+This application enables users to convert the content of a repository stored in a ZIP file into readable text format, so you can use in your **ChatGPT** as a F2P players
 
 ## Getting Started
 
