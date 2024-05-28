@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extracted Files</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        margin: 0;
+      }
+      .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 800px;
+        margin: 20px;
+        position: relative;
+      }
+      h1 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #333;
+        text-align: center;
+      }
+      pre {
+        background-color: #f8f8f8;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow-x: auto;
+        position: relative;
+      }
+      .file-path {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .copy-all-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        background-color: #008cba;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 4px #999;
+      }
+      .copy-all-button:hover {
+        background-color: #007bb5;
+      }
+      .copy-all-button:active {
+        background-color: #007bb5;
+        box-shadow: 0 2px #666;
+        transform: translateY(2px);
+      }
+      .back-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        background-color: #4caf50;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 4px #999;
+        margin-top: 20px;
+      }
+      .back-button:hover {
+        background-color: #45a049;
+      }
+      .back-button:active {
+        background-color: #45a049;
+        box-shadow: 0 2px #666;
+        transform: translateY(2px);
+      }
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Extracted Files</h1>
+      <div class="buttons">
+        <a href="/" class="back-button">Upload another file</a>
+        <button class="copy-all-button" onclick="copyAllToClipboard()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/>
+            <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/>
+          </svg>
+        </button>
+      </div>
+      <div id="files-content">
+        {% for path, content in files.items() %}
+        <pre class="file-container">
+```{{ path }}
+{{ content }}```
+        </pre>
+        {% endfor %}
+      </div>
+    </div>
+    <script>
+      function copyAllToClipboard() {
+        var content = "";
+        var fileContainers = document.querySelectorAll(".file-container");
+        fileContainers.forEach(function (container) {
+          content += container.innerText + "\n";
+        });
+        navigator.clipboard.writeText(content).then(
+          function () {
+            alert("All files copied to clipboard");
+          },
+          function (err) {
+            alert("Failed to copy: ", err);
+          }
+        );
+      }
+    </script>
+  </body>
+</html>
